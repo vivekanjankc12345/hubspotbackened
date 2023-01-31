@@ -3,7 +3,7 @@ const contactrouter=express.Router();
 const {contactmodel}=require("./user.contact.model")
 contactrouter.get("/data",async(req,res)=>{
     try{
-              let que=req.body;
+              let que=req.query;
               const get=await contactmodel.find(que);
               res.send(get)
     }
