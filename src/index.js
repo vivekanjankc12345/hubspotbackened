@@ -3,11 +3,13 @@ const app=express();
 const cors=require("cors");
 const {connection}=require("./config/db");
 const { userrouter } = require("./features/Users/user.route");
+const {contactrouter}=require("./features/Users/user.contact.router")
 app.use(cors({
     origin:"*"
 }))
 app.use(express.json());
 app.use("/user",userrouter)
+app.use("/contact",contactrouter)
 app.listen(8080,async()=>{
     try
     {
